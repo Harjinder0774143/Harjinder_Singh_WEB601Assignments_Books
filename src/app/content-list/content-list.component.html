@@ -1,0 +1,21 @@
+
+<!-- <marquee><h1 style="color: red">LIST OF ELECTRONIC GADGETS:</h1></marquee> -->
+
+<form action="/action_page.php">
+    
+    
+
+
+<div style="display: flex; flex-wrap: wrap;">
+    <div *ngFor="let a of gadgets; let x = index" style="background-color: gainsboro;">
+        <div [ngClass]="(x > 0) ? mycard: firstgadget">
+        <p style="text-align:center;"><b>ID:</b>   {{a.id}}</p>
+        <p style="text-align:center; font-size: 18px; color: blue; "><b style="color:red">TITLE:</b>  {{a.Name}}</p>
+        <img style="margin-left:40px;" [src]="a.imgURL" width="250px" height="250px" (click)="onClick(x)">
+        <p style="text-align:center;"><b style="color:peru">Genre:</b>  {{a.Genre}}</p>
+        <p style="text-align:center;"><b style="color:peru">PRICE:</b>  {{a.Price}}</p>
+        <!-- <p style="text-align:center;"><b style="color:blue">COLORS:<span *ngFor="let size of a?.tags">{{" "}}{{ size }}</span></b></p> -->
+    </div>
+    </div>
+</div>
+
