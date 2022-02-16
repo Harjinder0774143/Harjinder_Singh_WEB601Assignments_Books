@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentListComponent implements OnInit {
 
-  mycard = "mycard";
-  firstgadget = "firstgadget";
+  movieCard = "movieCard";
+  genres = ["Biography", "Mindset", "Fantasy"];
+  enteredValueExist = false;
+  enteredValueNotExist = false;
+  
 
   // list of books with details
   gadgets = [{
@@ -81,8 +84,15 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(index:any){
-    console.log("Index Number:", index, "Name:", this.gadgets[index].Name);
+  searchAvailability(text:any){
+    this.enteredValueExist = false;
+    this.enteredValueNotExist = false;
+    console.log("input value", text);
+    let value = this.gadgets.filter((a:any)=>{
+      return a.Name.toLowerCase().includes(text.toLowerCase());  
+    })
+    console.log("value", value.length);
+    value.length ? this.enteredValueExist = true : this.enteredValueNotExist = true;
   }
-
+ 
 }
