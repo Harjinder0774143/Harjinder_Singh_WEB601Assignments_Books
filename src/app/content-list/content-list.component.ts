@@ -19,7 +19,7 @@ export class ContentListComponent implements OnInit {
     Name: "A Burning in My Bones",
     Genre: "Biography",
     Price: "$16.99",
-    imgURL:  '../../assets/img/book-A-Burning-in-My-Bones.png',
+    imgURL:  '',
     writer: "Winn Collier",
   },
 {
@@ -84,15 +84,17 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   searchAvailability(text:any){
     this.enteredValueExist = false;
     this.enteredValueNotExist = false;
     console.log("input value", text);
     let value = this.gadgets.filter((a:any)=>{
-      return a.Name.toLowerCase().includes(text.toLowerCase());  
+      // return a.Name.toLowerCase().includes(text.toLowerCase());  
     })
-    console.log("value", value.length);
-    value.length ? this.enteredValueExist = true : this.enteredValueNotExist = true;
+    console.log("value", value);
+    value ? this.enteredValueExist = true : this.enteredValueNotExist = true;
   }
  
 }
