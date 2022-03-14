@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-content-card',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent implements OnInit {
-
+  @Input() getGadget?:any;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.getGadget);
   }
 
   enteredValueExist = false;
@@ -19,11 +20,11 @@ export class ContentCardComponent implements OnInit {
     this.enteredValueExist = false;
     this.enteredValueNotExist = false;
     console.log("input value", text);
-    let value = this.gadgets.filter((a:any)=>{
-      // return a.Name.toLowerCase().includes(text.toLowerCase());  
-    })
-    console.log("value", value);
-    value ? this.enteredValueExist = true : this.enteredValueNotExist = true;
+    // let value = this.gadgets.filter((a:any)=>{
+    //   // return a.Name.toLowerCase().includes(text.toLowerCase());  
+    // })
+    // console.log("value", value);
+    // value ? this.enteredValueExist = true : this.enteredValueNotExist = true;
+  
   }
-
 }

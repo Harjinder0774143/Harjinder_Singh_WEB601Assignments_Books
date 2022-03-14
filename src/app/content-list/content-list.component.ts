@@ -17,7 +17,7 @@ export class ContentListComponent implements OnInit {
   gadgets = [{
     id: 1,
     Name: "A Burning in My Bones",
-    Genre: "Biography",
+    Genre: ["Biography", "Reality"],
     Price: "$16.99",
     imgURL:  '',
     writer: "Winn Collier",
@@ -25,7 +25,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 2,
     Name: "Steve Jobs",
-    Genre: "Biography",
+    Genre: ["Biography", "Reality"],
     Price: "$24.99",
     imgURL:  '../../assets/img/steve-jobs.jpg',
     writer: "Walter Isaacson",
@@ -33,7 +33,7 @@ export class ContentListComponent implements OnInit {
 {
     id: 3,
     Name: "The Subtle Art of Not Giving a F*ck",
-    Genre: "Mindset",
+    Genre: ["Mindset", "Positive Thinking"],
     Price: "$19.99",
     imgURL:  '../../assets/img/The Subtle Art of Not Giving a Fck.jpg',
     writer: "Mark Manson"
@@ -41,7 +41,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 4,
     Name: "The Monk Who Sold His Ferrari",
-    Genre: "Mindset",
+    Genre: ["Mindset", "Positive Thinking"],
     Price: "$19.99",
     imgURL:  '../../assets/img/The Monk Who Sold His Ferrari.jpg',
     writer: "Robin Sharma"
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 5,
     Name: "The Power of Now",
-    Genre: "Mindset",
+    Genre: ["Mindset", "positive Thinking"],
     Price: "$19.99",
     imgURL:  '../../assets/img/The Power of Now.jpg',
     writer: "Eckhart Tolle"
@@ -57,7 +57,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 6,
     Name: "The Last Wish: Introducing the Witcher",
-    Genre: "Fantasy",
+    Genre: ["Fantasy", "Drama"],
     Price: "$9.99",
     imgURL:  '../../assets/img/The Last Wish-Introducing the Witcher.jpg',
     writer: "Andrzej Sapkowski"
@@ -65,7 +65,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 7,
     Name: "The Two Towers: The Lord of the Rings",
-    Genre: "Fantasy",
+    Genre: ["Fantasy", "Drama"],
     Price: "$34.99",
     imgURL:  '../../assets/img/The Two Towers- The Lord of the Rings.jpg',
     writer: "J. R. R. Tolkien"
@@ -73,7 +73,7 @@ export class ContentListComponent implements OnInit {
 {
   id: 8,
     Name: "Julian Assange: Founder of WikiLeaks",
-    Genre: "Biography",
+    Genre: ["Biography", "Reality"],
     Price: "$39.99",
     imgURL:  '../../assets/img/39019099.jpg',
     writer: "Kristin Thiel"
@@ -82,6 +82,7 @@ export class ContentListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("gadgets length", this.gadgets.length)
   }
 
   
@@ -90,11 +91,11 @@ export class ContentListComponent implements OnInit {
     this.enteredValueExist = false;
     this.enteredValueNotExist = false;
     console.log("input value", text);
-    let value = this.gadgets.filter((a:any)=>{
-      // return a.Name.toLowerCase().includes(text.toLowerCase());  
-    })
-    console.log("value", value);
-    value ? this.enteredValueExist = true : this.enteredValueNotExist = true;
+  //   let value = this.gadgets.filter((a:any)=>{
+  //     // return a.Name.toLowerCase().includes(text.toLowerCase());  
+  //   })
+  //   console.log("value", value);
+  //   value ? this.enteredValueExist = true : this.enteredValueNotExist = true;
   }
  
 }

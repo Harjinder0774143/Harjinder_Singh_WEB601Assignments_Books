@@ -9,13 +9,14 @@ import { HighlightDirective } from './highlight.directive';
 
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { HoverAffectDirective } from './hover-affect.directive';
 
 @NgModule({
   declarations: [
     AppComponent,    
     PipelistPipe,
     HighlightDirective,    
-    ContentListComponent, ContentCardComponent
+    ContentListComponent, ContentCardComponent, HoverAffectDirective
   ],
   imports: [
     BrowserModule,
