@@ -1,1 +1,15 @@
+
+<h2>Single content</h2>
+<!-- <label for="search-box"> Search</label>
+<input [(ngModel)]="searchBar" #searachBar id="search-box"  /> <button (click)="search()">Search</button> -->
+<input type="text" #text placeholder="Search.." name="search">
+<button type="submit" (click)="search(text.value, $event)">Search</button>
+<p style="color: red;" *ngIf="error !='' ">{{error}}</p>
+<br/><br/>
+<app-content-card style=" box-shadow: 5px 10px #777575; border: 0.5px solid" elementType="card" [getGadget]="findElement"></app-content-card>
+
+<br/>
 <app-content-list></app-content-list>
+
+<h2>App Message</h2>
+<app-app-messages></app-app-messages>

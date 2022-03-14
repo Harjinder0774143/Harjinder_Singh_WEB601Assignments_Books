@@ -10,13 +10,14 @@ import { HighlightDirective } from './highlight.directive';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { HoverAffectDirective } from './hover-affect.directive';
+import { AppMessagesComponent } from './app-messages/app-messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
     PipelistPipe,
     HighlightDirective,    
-    ContentListComponent, ContentCardComponent, HoverAffectDirective
+    ContentListComponent, ContentCardComponent, HoverAffectDirective, AppMessagesComponent
   ],
   imports: [
     BrowserModule,
