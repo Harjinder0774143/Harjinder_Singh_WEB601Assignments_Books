@@ -1,24 +1,27 @@
-
-
-<!-- <div class="formcontainer">    
-    <input type="text" id="searchBox"  #topic placeholder="Type movie here">    
+<!-- <div class="formcontainer">
+    <input type="text" id="searchBox"  #topic placeholder="Type movie here">
     <button (click)="searchAvailability(topic.value)" >Search</button>
 </div>
 <div>
     <h4 class="enteredValueExist" *ngIf="enteredValueExist">Entered value exists</h4>
     <h4 class="enteredValueNotExist" *ngIf="enteredValueNotExist">Entered value does not exists</h4>
 </div> -->
-  
+<app-modify-content-component></app-modify-content-component>
+
 <h4>LIST</h4>
-<div >
-    <div style="display:flex; flex-wrap: wrap">
-        <app-content-card *ngFor="let a of gadgets; first as isFirstBook; last as isLast" appHoverAffect elementType="card" [firstOrLast]="isFirstBook || isLast" [getGadget]="a"></app-content-card>
-    </div>
+<div>
+  <div style="display: flex; flex-wrap: wrap">
+    <app-content-card
+      *ngFor="let a of movies; first as isFirstBook; last as isLast"
+      appHoverAffect
+      elementType="card"
+      [firstOrLast]="isFirstBook || isLast"
+      [getGadget]="a"
+    ></app-content-card>
+  </div>
 </div>
 
-
-
-  <!-- <h4>BIOGRAPHY</h4>
+<!-- <h4>BIOGRAPHY</h4>
 <div style="display: flex; flex-wrap: wrap;">
     <div *ngFor="let a of gadgets | pipelist:genres[0]" style="background-color: gainsboro;">
         <div [ngClass]="movieCard">

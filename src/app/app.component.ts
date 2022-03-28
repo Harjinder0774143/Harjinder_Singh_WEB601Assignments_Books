@@ -22,7 +22,6 @@ export class AppComponent {
   ngOnInit():void{
     this.movieServiceService.getContent(this.searach)
     .subscribe(response=>this.findElement = response);
-    console.log("Find Element ",this.findElement)
   }
 
 

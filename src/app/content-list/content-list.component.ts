@@ -17,23 +17,29 @@ export class ContentListComponent implements OnInit {
 
 
   // list of books with details
-  gadgets:Movie[] = []
+  movies:Movie[] = []
 
 
   constructor(private movieServiceService:MovieServiceService) { }
 
   ngOnInit(): void {
-    this.movieServiceService.getContentList()
-    .subscribe(response => this.gadgets = response)
-    // console.log("gadgets length", this.gadgets.length)
+    this.getMovieList();
   }
 
+  getMovieList()
+  {
+    return this.movieServiceService.getContentList()
+    .subscribe(response => this.movies = response);
+  }
+
+  updateList(movies:any){
+    this.movies = movies;
+  }
 
 
   searchAvailability(text:any){
     this.enteredValueExist = false;
     this.enteredValueNotExist = false;
-    console.log("input value", text);
   //   let value = this.gadgets.filter((a:any)=>{
   //     // return a.Name.toLowerCase().includes(text.toLowerCase());
   //   })

@@ -1,0 +1,95 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+  rel="stylesheet"
+/>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<div class="card p-5 m-2">
+  <div [hidden]="submitted" class="p-5">
+    <h1>Add New Movie</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group mb-2">
+        <label for="name">Id</label>
+        <input
+          type="number"
+          class="form-control"
+          id="id"
+          min="1"
+          [(ngModel)]="movie_id"
+          name="id"
+        />
+
+      </div>
+      <div class="form-group mb-2">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="movies.Name"
+          name="name"
+          #name="ngModel"
+        />
+        <div [hidden]="!nameRequired" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="name">Genre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Genre"
+          [(ngModel)]="movies.Genre"
+          name="Genre"
+        />
+        <span class="small">Enter Genre comma(,) seperated</span>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="name">Price</label>
+        <input
+          type="text"
+          required="true"
+          class="form-control"
+          id="price"
+          [(ngModel)]="movies.Price"
+          name="price"
+        />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="name">Image</label>
+        <input
+          type="file"
+          (change)="onFileChanged($event)"
+          class="form-control"
+          id="name1"
+          required="true"
+          [(ngModel)]="movies.imgURL"
+          name="imgURL"
+        />
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="name">Writer</label>
+        <input
+          type="text"
+          class="form-control"
+          id="writer"
+          required="true"
+          [(ngModel)]="movies.writer"
+          name="writer"
+        />
+      </div>
+      <button class="btn btn-primary" type="submit">Add New Movie</button>
+    </form>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".genre").select2();
+    });
+  </script>
+</div>

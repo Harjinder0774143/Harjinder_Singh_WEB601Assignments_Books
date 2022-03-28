@@ -1,10 +1,10 @@
-<!-- <div class="formcontainer">    
-    <input type="text" id="searchBox"  #topic placeholder="Type movie here">    
+<!-- <div class="formcontainer">
+    <input type="text" id="searchBox"  #topic placeholder="Type movie here">
     <button (click)="searchAvailability(topic.value)" >Search</button>
 </div> -->
 
 <!-- [ngClass]="movieCard" -->
-<div style="display:inline-block" appHoverAffect  elementType="card">    
+<div style="display:inline-block" appHoverAffect  elementType="card">
     <p style="text-align:center;"><b>ID:</b>   {{getGadget?.id}}</p>
     <p style="text-align:center; font-size: 18px; color: blue; " appHoverAffect  elementType="name"><b style="color:red">TITLE:</b>  {{getGadget?.Name}}</p>
     <div *ngIf="getGadget?.imgURL">
@@ -13,7 +13,7 @@
     <div *ngIf="!getGadget?.imgURL">
         <img style="margin-left:40px;" src="../../assets/img/deafultbook.jpg" width="250px" height="250px">
     </div>
-    
+
     <p style="text-align:center;"><b style="color:peru">Genre:</b>  <span appHoverAffect  elementType="genre" *ngFor="let list of getGadget?.Genre" style="margin-right:4px">{{ list }}</span></p>
     <p style="text-align:center;"><b style="color:peru">PRICE:</b>  {{getGadget?.Price}}</p>
     <!-- <p style="text-align:center;"><b style="color:blue">COLORS:<span *ngFor="let size of a?.tags">{{" "}}{{ size }}</span></b></p> -->
