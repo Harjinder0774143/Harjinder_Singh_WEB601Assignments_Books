@@ -24,7 +24,7 @@ export class HoverAffectDirective {
       this.elm.nativeElement.style.fontWeight = "bold";
     }
     else if (this.elementType == "card" && this.firstOrLast) { //operating on card
-      this.elm.nativeElement.style.border = "3px dashed #123456";
+      this.elm.nativeElement.style.border = "0px dashed #123456";
     }
   }
   @HostListener("mouseleave") onMouseLeave() {

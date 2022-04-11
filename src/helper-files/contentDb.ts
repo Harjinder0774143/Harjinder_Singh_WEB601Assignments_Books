@@ -63,4 +63,13 @@ id: 8,
   Price: "$39.99",
   imgURL:  '../../assets/img/39019099.jpg',
   writer: "Kristin Thiel"
-}]
+},
+{
+  id: 9,
+    Name: "Dalgliesh",
+    Genre: ['crime', 'mystery'],
+    Price: "$60",
+    imgURL:  '../../assets/img/Dalgliesh.jpg',
+    writer: "Phyllis Dorothy James"
+  },
+]

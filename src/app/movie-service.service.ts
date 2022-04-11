@@ -22,7 +22,6 @@ export class MovieServiceService {
   getContentList(): Observable<Movie[]> {
     this.messageService.add('Content array loaded!');
     return this.httpClient.get<Movie[]>(this.SERVER_URL);
-
     // return of(GADGETS);
   }
 
@@ -32,8 +31,10 @@ export class MovieServiceService {
     // this.messageService.add(`Content Item at id:
     // ${movie.id}`);
     // return of(movie);
+    console.log("Retrieving OBSERVABLE movie details");
     return this.httpClient.get<Movie>(`${this.SERVER_URL}/${id}`);
   }
+
 
   addNewMovies(movies: Movie): Observable<Movie>{
       this.messageService.add(`New content added successfully`);

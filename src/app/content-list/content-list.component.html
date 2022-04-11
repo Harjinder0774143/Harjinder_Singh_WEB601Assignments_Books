@@ -6,20 +6,26 @@
     <h4 class="enteredValueExist" *ngIf="enteredValueExist">Entered value exists</h4>
     <h4 class="enteredValueNotExist" *ngIf="enteredValueNotExist">Entered value does not exists</h4>
 </div> -->
-<app-modify-content-component></app-modify-content-component>
 
-<h4>LIST</h4>
+
+
+<div class="container">
+    <h1 class="text-center">List of Books</h1>
+    <app-modify-content-component></app-modify-content-component>
+    
 <div>
   <div style="display: flex; flex-wrap: wrap">
-    <app-content-card
+    <app-movie-card
       *ngFor="let a of movies; first as isFirstBook; last as isLast"
       appHoverAffect
       elementType="card"
       [firstOrLast]="isFirstBook || isLast"
       [getGadget]="a"
-    ></app-content-card>
+    ></app-movie-card>
   </div>
 </div>
+</div>
+
 
 <!-- <h4>BIOGRAPHY</h4>
 <div style="display: flex; flex-wrap: wrap;">

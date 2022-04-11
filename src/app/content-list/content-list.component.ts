@@ -1,6 +1,8 @@
 import { MovieServiceService } from './../movie-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Movie } from '../../helper-files/movie';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogData } from '../modify-content-component/modify-content-component.component';
 
 @Component({
   selector: 'app-content-list',
@@ -8,7 +10,8 @@ import { Movie } from '../../helper-files/movie';
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
-
+  
+  @Inject(MAT_DIALOG_DATA) public data: DialogData
   movieCard = "movieCard";
   genres = ["Biography", "Mindset", "Fantasy"];
   enteredValueExist = false;
@@ -29,10 +32,14 @@ export class ContentListComponent implements OnInit {
   getMovieList()
   {
     return this.movieServiceService.getContentList()
-    .subscribe(response => this.movies = response);
+    .subscribe(response => {
+      console.log(response)
+      this.movies = response
+    } );
   }
 
   updateList(movies:any){
+    console.log(movies)
     this.movies = movies;
   }
 
