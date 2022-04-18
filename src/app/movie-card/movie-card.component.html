@@ -9,7 +9,7 @@
         
         <div class="movie-card ">
             <div  elementType="card">
-                <p style="text-align:center;"><b>ID:</b>   {{getGadget?.id}}</p>
+                <p style="text-align:center;"><b>Id:</b>   {{getGadget?.id}}</p>
                 <p style="text-align:center; font-size: 16px; color: blue;margin-left:20px " appHoverAffect  elementType="name"><b style="color:red"></b>  {{getGadget?.Name}}</p>
                 <div *ngIf="getGadget?.imgURL">
                     <img style="margin-left:40px;" [src]="getGadget?.imgURL" width="250px" height="250px">
@@ -19,9 +19,9 @@
                 </div>
             
                 <p style="text-align:center;"><b style="color:peru">Genre:</b>  <span appHoverAffect  elementType="genre" *ngFor="let list of getGadget?.Genre" style="margin-right:4px">{{ list }}</span></p>
-                <p style="text-align:center;"><b style="color:peru">PRICE:</b>  {{getGadget?.Price}}</p>
+                <p style="text-align:center;"><b style="color:peru">Price:</b>  {{getGadget?.Price}}</p>
                 <div class="movie-details" style="position: relative;left: 30%;">
-                    <button mat-raised-button color="warn" [routerLink]="['/list', getGadget?.id ?? 0]" routerLinkActive="active" (click)="getMovieDetails(getGadget)">Books Details</button>
+                    <button mat-raised-button color="warn" [routerLink]="['/list', getGadget?.id ?? 0]" routerLinkActive="active" (click)="getMovieDetails(getGadget)">Book Details</button>
                 </div>
                 
             </div>

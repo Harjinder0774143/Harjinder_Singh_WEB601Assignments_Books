@@ -29,7 +29,7 @@
 <div id="content-wrapper">
   <router-outlet></router-outlet>
 </div> -->
-<mat-toolbar color="primary" class="example-toolbar">Books App</mat-toolbar>
+<mat-toolbar color="primary" class="example-toolbar">Book App</mat-toolbar>
 <mat-sidenav-container color="primary"  class="example-container">
   <mat-sidenav class="custom-sidenav" mode="side" opened>
     <mat-list role="list">
@@ -40,18 +40,31 @@
       </mat-list-item>
       <mat-list-item role="listitem">
         <mat-icon >event_note</mat-icon>
-        <a routerLink="list" routerLinkActive="active">Books List</a>
+        <a routerLink="list" routerLinkActive="active">Book List</a>
       </mat-list-item>
       <div class="side-nav-child">
         <mat-list-item role="listitem">
           <mat-icon >event_note</mat-icon>
-          <a routerLink="list/42" routerLinkActive="active">Books InDetail</a>
+          <a routerLink="list/42" routerLinkActive="active">Book InDetail</a>
         </mat-list-item>
       </div>
       <mat-list-item role="listitem">
         <mat-icon >mood_bad</mat-icon>
         <a routerLink="pagewillnotbefound" routerLinkActive="active">Invalid page</a>
       </mat-list-item>
+      <!-- <mat-list-item>
+        <mat-form-field appearance="fill" style="display:none">
+          <mat-label>Message</mat-label>
+          <input matInput value="Disco party!" #message>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" style="display:none">
+          <mat-label>Action</mat-label>
+          <input matInput value="Dance!!@@@@@@@@" #action>
+        </mat-form-field>
+        
+        <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show PWAUpdate</button>
+      </mat-list-item> -->
     </mat-list>
     
   </mat-sidenav>

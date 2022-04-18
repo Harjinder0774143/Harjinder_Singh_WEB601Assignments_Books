@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+
 
 .example-container {
     position: absolute;
@@ -33,3 +33,7 @@
 .side-nav-child{
     margin-left: 12px;
 }
+
+mat-form-field {
+    margin-right: 12px;
+  }
